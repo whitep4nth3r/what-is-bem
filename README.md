@@ -51,8 +51,8 @@ In context, your HTML might look like:
 
 ```html
 <section class="block">
-  <p class="block__element">This is an element inside a block.</p>
-  <p class="block__element--modifier">This is an element inside a block, with a modifier.</p>
+  <p class="block__elementOne">This is an element inside a block.</p>
+  <p class="block__elementOne--modifier">This is an element inside a block, with a modifier.</p>
 </section>
 ```
 
