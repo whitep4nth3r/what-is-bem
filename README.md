@@ -69,4 +69,4 @@ In a real-life example, with more realistic class names, this might look like:
 
 Using BEM is not going to solve _all_ your problems, but it can help you take a step in the right direction to making your CSS readable, descriptive, and safe from clashing style properties.
 
-It's also worth mentioning that there are plenty of other systems out there to make your life easier when writing HTML and CSS — but the most important thing to remember is to use a system, stick to that system, and make it work for you.
+It's also worth mentioning that there are plenty of other class naming conventions and systems out there to make your life easier when writing HTML and CSS (such as OOCSS and SMACSS) — but the most important thing to remember is to use a system, stick to that system, and make it work for you.
