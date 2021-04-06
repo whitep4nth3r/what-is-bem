@@ -26,18 +26,26 @@ BEM stands for **block**, **element**, **modifier**.
 ### Element: any element inside that block, namespaced with your block name
 
 ```css
-.block__element {
+.block__elementOne {
+}
+
+.block__elementTwo {
 }
 ```
 
 ### Modifier: a flag to add styles to an element, without creating a separate CSS class
 
 ```css
-.block__element--modifier {
+.block__elementOne--modifier {
 }
 ```
 
-Note: it's not entirely necessary to use double underscores or double dashes, but it helps to make your code more readable.
+Notes:
+
+- It's not entirely necessary to use double underscores or double dashes, but it helps to make your code more readable
+- The standard syntax for class names in BEM uses camelCase
+
+## BEM in context
 
 In context, your HTML might look like:
 
@@ -59,6 +67,6 @@ In a real- life example, with more realistic class names, this might look like:
 </section>
 ```
 
-Using BEM is not going to solve *all* your problems, but it can help you take a step in the right direction to making your CSS readable, descriptive, and safe from clashing style properties.
+Using BEM is not going to solve _all_ your problems, but it can help you take a step in the right direction to making your CSS readable, descriptive, and safe from clashing style properties.
 
 It's also worth mentioning that there are plenty of other systems out there to make your life easier when writing HTML and CSS — but the most important thing to remember is to use a system, stick to that system, and make it work for you.
