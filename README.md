@@ -56,7 +56,7 @@ In context, your HTML might look like:
 </section>
 ```
 
-In a real- life example, with more realistic class names, this might look like:
+In a real-life example, with more realistic class names, this might look like:
 
 ```html
 <section class="container">
