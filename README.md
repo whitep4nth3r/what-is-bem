@@ -30,7 +30,7 @@ So, how do we work with BEM?
 
 Let's take a look at the building blocks of BEM.
 
-### Block: a chunk of HTML that you want to scope styles to
+### Block: a chunk of HTML to which you want to scope styles
 
 ```css
 .block {
