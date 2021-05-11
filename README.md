@@ -67,7 +67,7 @@ In context, your HTML using the above class names might look like this:
 ```html
 <section class="block">
   <p class="block__elementOne">This is an element inside a block.</p>
-  <p class="block__elementOne--modifier">This is an element inside a block, with a modifier.</p>
+  <p class="block__elementOne block__elementOne--modifier">This is an element inside a block, with a modifier.</p>
 </section>
 ```
 
@@ -76,7 +76,7 @@ In a real-life example, with more realistic class names, this might look like:
 ```html
 <section class="container">
   <p class="container__paragraph">This is a paragraph inside a container.</p>
-  <p class="container__paragraph--bold">
+  <p class="container__paragraph container__paragraph--bold">
     This is a paragraph inside a container, with a modifier that adds bold styling.
   </p>
 </section>
