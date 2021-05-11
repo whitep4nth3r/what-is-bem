@@ -77,7 +77,7 @@ In a real-life example, with more realistic class names, this might look like:
 <section class="container">
   <p class="container__paragraph">This is a paragraph inside a container.</p>
   <p class="container__paragraph--bold">
-    This is an paragraph inside a container, with a modifier that adds bold styling.
+    This is a paragraph inside a container, with a modifier that adds bold styling.
   </p>
 </section>
 ```
