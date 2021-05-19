@@ -4,23 +4,213 @@
     <meta charset="utf-8" />
     <title>What is BEM in CSS? | @whitep4nth3r</title>
 
-    <meta name="description" content="A small repository to explain BEM in CSS. By whitep4nth3r." />
+    <meta
+      name="description"
+      content="Have you ever worked on an application with one huge CSS file and found that when you changed something in one place, something unexpected happened somewhere else? I had this problem *a lot* in my early days of front end development. It was frustrating! So what can you do to stop this from happening?"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <link rel="icon" href="/favicon.ico" />
-
     <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://whitep4nth3r.com/blog/what-is-bem-in-css" />
   </head>
 
   <body>
-    <main>
-      <header><h1>What is BEM in CSS?</h1></header>
-      <section class="block">
-        <p class="block__elementOne">This is an element inside a block.</p>
-        <p class="block__elementOne--modifier">
-          This is an element inside a block, with a modifier.
+    <main class="container">
+      <article class="article">
+        <h1 class="article__heading article__heading--main">What is BEM in CSS?</h1>
+        <p class="article__paragraph">
+          Have you ever worked on an application with one huge CSS file and found that when you
+          changed a style rule in one place, something unexpected happened somewhere else? I had
+          this problem a lot in my early days of front end development. It was frustrating! So what
+          can you do to stop this from happening?
         </p>
-      </section>
+        <h2 class="article__heading">You need to scope your style rules!</h2>
+        <p class="article__paragraph">
+          To scope your CSS means to encapsulate style rules in a systematic way so that they apply
+          to one particular chunk of HTML only. CSS-in-JS solutions such as
+          <a
+            href="https://styled-components.com/"
+            class="article__link"
+            target="_blank"
+            rel="noopener nofollow"
+            >Styled Components</a
+          >
+          or
+          <a
+            href="https://github.com/css-modules/css-modules"
+            class="article__link"
+            target="_blank"
+            rel="noopener nofollow"
+            >CSS modules</a
+          >
+          that ship with front end frameworks have largely solved this problem by scoping styles to
+          your component templates as standard. This means you don't need to worry about classes in
+          one component affecting the styling of another component — even if you use the same class
+          name. Nice!
+        </p>
+        <p class="article__paragraph">
+          But what if you're just starting out, and you want to focus on building out pure CSS in a
+          systematic way without getting bogged down with CSS-in-JS?
+        </p>
+        <h2 class="article__heading">Working in pure CSS</h2>
+        <p class="article__paragraph">
+          In order to scope your styles in pure CSS, the aim is to declare your CSS classes
+          specifically and solely for individual HTML components. Style rules should be purposefully
+          verbose and self-documenting, without relying on inheritance or default browser behaviour.
+          This type of system discourages the use of utility classes reused across multiple
+          components because this is where you can run into the problems described at the beginning
+          of the post. If you change the style properties of a utility class used in multiple
+          components, it could affect the layout of your whole application — sometimes with very
+          undesirable results!
+        </p>
+        <p class="article__paragraph">
+          Let's take a look at how we can harness the power of a system like BEM.
+        </p>
+        <h2 class="article__heading">What does BEM stand for?</h2>
+        <p class="article__paragraph">
+          BEM stands for block, element, modifier, and it's a super-handy system to help you scope
+          CSS style properties to blocks of HTML. What's more, it encourages you to make your HTML
+          and CSS descriptive and self-documenting — helping identify the purpose and intended
+          function of the CSS classes in the code itself.
+        </p>
+        <p class="article__paragraph">
+          Other class naming conventions exist alongside BEM to help you scope styles when writing
+          HTML and CSS — such as OOCSS and SMACSS. You can even roll your own system! But the most
+          important thing to remember is to use a system, stick to that system, and make it work for
+          you.
+        </p>
+        <p class="article__paragraph">So, how do we work with BEM?</p>
+        <h2 class="article__heading">Block, element, modifier</h2>
+        <p class="article__paragraph">Let's take a look at the building blocks of BEM.</p>
+        <h3 class="article__subheading">
+          Block: a chunk of HTML to which you want to scope styles
+        </h3>
+        <pre class="article__codeBlock">
+.block {  
+}</pre
+        >
+        <h3 class="article__subheading">
+          Element: any element inside that block, name-spaced with your block name
+        </h3>
+        <pre class="article__codeBlock">
+.block__elementOne {
+}
+
+.block__elementTwo {
+}</pre
+        >
+        <h3 class="article__subheading">
+          Modifier: a flag to modify styles of an existing element, without creating a separate CSS
+          class
+        </h3>
+        <pre class="article__codeBlock">
+.block__elementOne--modifier {
+}</pre
+        >
+        <h3 class="article__subheading">BEM syntax conventions</h3>
+        <ul class="article__unorderedList">
+          <li class="article__unorderedListItem">
+            Use one or two underscores to separate the block name from the element name
+          </li>
+          <li class="article__unorderedListItem">
+            Use one or two dashes to separate the element name and its modifier
+          </li>
+          <li class="article__unorderedListItem">Use descriptive class names in camelCase</li>
+        </ul>
+        <h2 class="article__heading">BEM in context</h2>
+        <p class="article__paragraph">
+          In context, your HTML using the above class names might look like this:
+        </p>
+        <pre class="article__codeBlock">
+&lt;section class="block"&gt;
+    &lt;p class="block__elementOne">This is an element inside a block.&lt;/p&gt;
+  &lt;p class="block__elementOne block__elementOne--modifier"&gt;This is an element inside a block, with a modifier.&lt;/p&gt;
+&lt;/section&gt;</pre
+        >
+        <p class="article__paragraph">
+          In a real-life example, with more realistic class names, this might look like:
+        </p>
+        <pre class="article__codeBlock">
+&lt;section class="container"&gt;
+  &lt;p class="container__paragraph"&gt;This is a paragraph inside a container.&lt;/p&gt;
+  &lt;p class="container__paragraph container__paragraph--bold"&gt;
+    This is a paragraph inside a container, with a modifier that adds bold styling.
+  &lt;/p&gt;
+&lt;/section&gt;</pre
+        >
+        <p class="article__paragraph">
+          Using the fully-declarative approach, where you don't rely on inheritance or default
+          browser styles, your CSS classes might look like this:
+        </p>
+        <pre class="article__codeBlock">
+.container {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+    
+.container__paragraph {
+  color: #000000;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+  
+.container__paragraph--bold {
+  font-weight: bold;
+}</pre
+        >
+        <p class="article__paragraph">
+          Notice how any default browser behaviour we might take for granted has been declared in
+          the above classes — such as display: block on the .container &lt;div&gt; element. This is
+          an extremely useful way to ensure that if you need to switch up the HTML elements in your
+          components — for example swapping the &lt;div&gt; (default display: block) for a
+          &lt;span&gt; (default display: inline) in the above example — the resulting styles of your
+          components are not affected.
+        </p>
+        <h2 class="article__heading">Wrapping up</h2>
+        <p class="article__paragraph">
+          Using BEM is not going to solve all your CSS problems (good luck with centring those
+          &lt;div&gt; elements in your layouts!), but it can help you take a step in the right
+          direction to make your CSS readable, descriptive, and safe from any unexpected results.
+          Again, the most important thing to remember is to use a system, stick to that system, and
+          make it work for you.
+        </p>
+        <p class="article__paragraph">
+          Check out my latest YouTube video that supports this post. Subscribe for more regular
+          front end web development tips!
+        </p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/SND9SDdY0UM"
+          title="What is BEM in CSS on YouTube by whitep4nth3r"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <p class="article__paragraph">
+          And remember — build stuff, learn things, love what you do!
+        </p>
+      </article>
+      <footer class="footer">
+        <p class="footer__text">
+          Originally published on
+          <a
+            href="https://whitep4nth3r.com/?utm_source=whatisbem"
+            class="footer__link"
+            target="_blank"
+            rel="nofollow noopener"
+            >whitep4nth3r.com</a
+          >
+        </p>
+        <p class="footer__text footer__text--bold">
+          Inspect the DOM of this web page to see BEM in action!
+        </p>
+      </footer>
     </main>
   </body>
 </html>
